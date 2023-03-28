@@ -1,0 +1,27 @@
+nav ul li{
+    list-style: none;
+    position: relative;
+}
+
+nav ul li a{
+    display: block;
+}
+
+nav ul li ul{
+    display: none;
+    position: absolute;
+    padding: 35px;
+}
+
+nav ul li:hover ul{
+    display: block;
+}
+
+nav ul li ul li a{
+    padding: 13px 20px;
+}
+
+.Language2 {
+    display: flex;
+    justify-content: center;
+}

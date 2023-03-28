@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iranian Salt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="English.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="float.css">
+    <link rel="stylesheet" href="type_writer.css">
+    <link rel="stylesheet" href="Language.css">
+    <script src="gallery.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="#">Iranian Salt</a>
+      </div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="Language2"><a>Language</a>
+          <ul>
+            <li><a href="file:///E:/Programming/Iran%20Salt/Farsi/Farsi.html">فارسی</a></li>
+            <li><a href="">العربية</a></li>
+            <li><a href="file:///E:/Programming/Iran%20Salt/English/English.html#features">English</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+  <!-- Home -->
+  <div class="banner" id="home">
+      <div class="type_writer">
+        <h1>
+          Iranian Salt is <span id="typewriter"></span
+          ><span id="cursor">|</span>
+        </h1>
+        <script>
+          function sleep(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+          }
+    
+          const phrases = ["fun", "exciting", "salty"];
+          const el = document.getElementById("typewriter");
+    
+          let sleepTime = 100;
+    
+          let curPhraseIndex = 0;
+    
+          const writeLoop = async () => {
+            while (true) {
+              let curWord = phrases[curPhraseIndex];
+    
+              for (let i = 0; i < curWord.length; i++) {
+                el.innerText = curWord.substring(0, i + 1);
+                await sleep(sleepTime);
+              }
+    
+              await sleep(sleepTime * 10);
+    
+              for (let i = curWord.length; i > 0; i--) {
+                el.innerText = curWord.substring(0, i - 1);
+                await sleep(sleepTime);
+              }
+    
+              await sleep(sleepTime * 5);
+    
+              if (curPhraseIndex === phrases.length - 1) {
+                curPhraseIndex = 0;
+              } else {
+                curPhraseIndex++;
+              }
+            }
+          };
+    
+          writeLoop();
+        </script>
+      </div>  
+  </div>
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      navbar.classList.add("show");
+      menuBtn.classList.add("hide");
+      body.classList.add("disabled");
+    }
+    cancelBtn.onclick = ()=>{
+      body.classList.remove("disabled");
+      navbar.classList.remove("show");
+      menuBtn.classList.remove("hide");
+    }
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+
+  <!-- Floating -->
+  <section>
+    <div class="container5" id="about">
+      <div class="left"></div>
+      <div class="right">
+        <div class="content">
+          <h1>About Us</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda dolore reprehenderit ullam blanditiis ex sapiente pariatur tempore incidunt facilis?</p>
+          <a href="about_us.html" class="btn" style="border-radius: 30px;">Read more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <div class="Gallery">
+    <div class="wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <div class="carousel">
+        <img src="images/img-1.jpg" alt="img" draggable="false">
+        <img src="images/img-2.jpg" alt="img" draggable="false">
+        <img src="images/img-3.jpg" alt="img" draggable="false">
+        <img src="images/img-4.jpg" alt="img" draggable="false">
+        <img src="images/img-5.jpg" alt="img" draggable="false">
+        <img src="images/img-6.jpg" alt="img" draggable="false">
+        <img src="images/img-7.jpg" alt="img" draggable="false">
+        <img src="images/img-8.jpg" alt="img" draggable="false">
+        <img src="images/img-9.jpg" alt="img" draggable="false">
+      </div>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="services" id="services">
+    <h1 style="margin-top: 50px;color: #007bff;">Services</h1>
+    <div class="wrapper1">
+      <div class="box">
+        <div class="front-face">
+            <div class="icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <span>Web Design</span>
+        </div>
+        <div class="back-face">
+            <span>Web Design</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem in deleniti vitae beatae veritatis aliquid porro perspiciatis dolores impedit ad.
+            </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="front-face">
+            <div class="icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <span>Advertising</span>
+        </div>
+        <div class="back-face">
+            <span>Advertising</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem in deleniti vitae beatae veritatis aliquid porro perspiciatis dolores impedit ad.
+            </p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="front-face">
+            <div class="icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <span>Game Design</span>
+        </div>
+        <div class="back-face">
+            <span>Game Design</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem in deleniti vitae beatae veritatis aliquid porro perspiciatis dolores impedit ad.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="row">
+
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">order status</a></li>
+            <li><a href="#">payment options</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>online shop</h4>
+          <ul>
+            <li><a href="#">watch</a></li>
+            <li><a href="#">bag</a></li>
+            <li><a href="#">shoes</a></li>
+            <li><a href="#">dress</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><svg style="padding-top: 8px;" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="30px" height="30px"><path fill="#263238" d="M21.881 6.136l-4.315-.974c-3.52-.795-7.017 1.414-7.812 4.934l-.983 4.351C11.603 9.95 16.357 6.788 21.881 6.136zM6.136 26.119l-.974 4.315c-.795 3.52 1.414 7.017 4.934 7.812l4.351.983C9.95 36.396 6.788 31.643 6.136 26.119zM37.904 9.754l-4.351-.983c4.497 2.832 7.659 7.586 8.311 13.109l.974-4.315C43.633 14.047 41.424 10.549 37.904 9.754zM26.119 41.864l4.315.974c3.52.795 7.017-1.414 7.812-4.934l.983-4.351C36.397 38.05 31.643 41.212 26.119 41.864z"/><path fill="#e91e63" d="M24,8C15.163,8,8,15.163,8,24s7.163,16,16,16s16-7.163,16-16S32.837,8,24,8z M20,13 c2.209,0,4,1.791,4,4c0,2.209-1.791,4-4,4s-4-1.791-4-4C16,14.791,17.791,13,20,13z M17,32c-2.209,0-4-1.791-4-4 c0-2.209,1.791-4,4-4s4,1.791,4,4C21,30.209,19.209,32,17,32z M22,24c0-1.105,0.895-2,2-2s2,0.895,2,2c0,1.105-0.895,2-2,2 S22,25.105,22,24z M28,35c-2.209,0-4-1.791-4-4c0-2.209,1.791-4,4-4s4,1.791,4,4C32,33.209,30.209,35,28,35z M31,24 c-2.209,0-4-1.791-4-4c0-2.209,1.791-4,4-4s4,1.791,4,4C35,22.209,33.209,24,31,24z"/></svg></a>
+          </div>
+        </div>
+
+        <div style="padding-top: 30px;">2023 - 2023 www.IranSalt.ir - All Rights Reserved.</div>
+
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
